@@ -1,0 +1,21 @@
+# Виртуальное окружение Python
+venv/
+.venv/
+env/
+ENV/
+
+# Системные папки VS Code
+.vscode/
+
+# Кэш Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Картинки, медиа и тяжелые программы (если они не нужны в коде)
+*.gif
+*.jpg
+*.jpeg
+*.png
+*.exe
