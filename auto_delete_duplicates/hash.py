@@ -14,10 +14,13 @@ def get_file_hash(file_path):
 
 def find_duplicates(files_size):
     duplicates = {}
-    for size, paths in files_size.items():
-        if len(paths) < 2:
-            continue
-
+    groups_to_check = [paths for paths in files_size.values() if len(paths) >= 2]
+    total_groups = len(groups_to_check)
+    
+    print(f"Начинаем проверку хэшей. Нужно проверить групп с одинаковым размером: {total_groups}")
+    
+    checked_groups = 0
+    for paths in groups_to_check:
         hashes = {}
         for path in paths:
             file_hash = get_file_hash(path)
@@ -31,8 +34,13 @@ def find_duplicates(files_size):
                 if file_hash not in duplicates:
                     duplicates[file_hash] = []
                 duplicates[file_hash].extend(paths_list)
+                
+        checked_groups += 1
+        if checked_groups % 100 == 0 or checked_groups == total_groups:
+            print(f"Проверено групп: {checked_groups} из {total_groups}")
 
     return duplicates
+
 
 
 def remove_duplicates(duplicates):
