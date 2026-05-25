@@ -20,6 +20,11 @@ def get_system_disks():
         "Config.Msi",
         "Recovery",
         "MSOCache",
+        "OneDrive",
+        "YandexDisk",
+        "Google Drive",
+        "iCloudDrive",
+        "Dropbox",
     }
     letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
     found_disks = []
