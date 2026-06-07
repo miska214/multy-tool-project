@@ -27,7 +27,7 @@ def get_pc_info():
     full_result = {
         'cpu': result_cpu,
         'gpu': result_gpu,
-        'memory': f"{result_memory:.2f} GB", # Сразу округлим для красоты
+        'memory': f"{result_memory:.2f} GB",
         'disk': f"{total_disk_size:.0f} GB",
         'board': result_board,
     }
