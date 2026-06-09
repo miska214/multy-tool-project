@@ -36,3 +36,4 @@ def get_pc_info():
 
 info = get_pc_info()
 print(info)
+

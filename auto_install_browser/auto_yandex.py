@@ -1,4 +1,5 @@
 import subprocess
+
 def install_yandex():
     command = "winget install Yandex.Browser --silent --accept-package-agreements --accept-source-agreements"
     print("начинаю установку яндекс")
@@ -8,4 +9,5 @@ def install_yandex():
     except subprocess.CalledProcessError:
         print("ошибка")
 
-print(install_yandex())
+if __name__ == "__main__":
+    install_yandex()
